@@ -1,2 +1,3 @@
 # cats
-private fork of Alex/cats
+
+Private version of AlexesJones/cats
