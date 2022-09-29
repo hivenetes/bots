@@ -11,7 +11,8 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "main"
 
-imagePullSecrets: [abhi-playground-cr]
+imagePullSecrets:
+  - name: abhi-playground-cr
 nameOverride: ""
 fullnameOverride: ""
 
