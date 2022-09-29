@@ -1,0 +1,10 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "cats.fullname" . }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "cats.fullname" . }}
+  endpoints:
+  - port: http
