@@ -53,6 +53,6 @@ jobs:
         uses: anchore/scan-action@v3
         id: scan
         with:
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
+          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       - name: Inspect action SARIF report
         run: cat ${{ steps.scan.outputs.sarif }}                
