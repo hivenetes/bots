@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
     
 env:
-  REGISTRY: registry.digitalocean.com/abhi-playground-cr
+  REGISTRY: registry.digitalocean.com/bootstrap-doks-cr
   IMAGE_NAME: ${{ github.repository }}
   
 jobs:

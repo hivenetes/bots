@@ -5,10 +5,10 @@ ARG VERSION
 RUN mkdir /src
 ADD . /src/
 WORKDIR /src
-RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -ldflags "-X main.Version=$VERSION" -a -o cats main.go
+RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -ldflags "-X main.Version=$VERSION" -a -o bots main.go
 FROM alpine
 COPY --from=builder /src/static /app/static
-COPY --from=builder /src/cats /app/cats
+COPY --from=builder /src/bots /app/bots
 WORKDIR /app
 EXPOSE 8080
-ENTRYPOINT ["/app/cats"]
+ENTRYPOINT ["/app/bots"]

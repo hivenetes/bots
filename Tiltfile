@@ -6,14 +6,14 @@
 
 ENVIRONMENT = "dev"
 os.putenv("DOCKER_DEFAULT_PLATFORM", "linux/amd64")
-DOCKER_REGISTRY = "registry.digitalocean.com/abhi-playground-cr/hivenetes/cats"
+DOCKER_REGISTRY = "registry.digitalocean.com/bootstrap-doks-cr/hivenetes/bots"
 
 local_resource('docr', 'doctl registry login', allow_parallel=True)
-allow_k8s_contexts('do-lon1-remote-dev')
+allow_k8s_contexts('do-ams3-abhi-doks-dev')
 
-docker_build(DOCKER_REGISTRY + ":dev", "pkg/")
+docker_build(DOCKER_REGISTRY, "pkg/")
 
 
-k8s_yaml(helm('.', name='cats', values='values.yaml'))
+k8s_yaml(helm('.', name='bots', values='values.yaml'))
 
-k8s_resource("cats", port_forwards="8080")
+k8s_resource("bots", port_forwards="8080")

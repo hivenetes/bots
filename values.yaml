@@ -1,4 +1,4 @@
-# Default values for cats.
+# Default values for bots.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 storage: true
@@ -6,13 +6,13 @@ storageClass: "do-block-storage"
 replicaCount: 1
 failure: false
 image:
-  repository: registry.digitalocean.com/abhi-playground-cr/hivenetes/cats
+  repository: registry.digitalocean.com/bootstrap-doks-cr/hivenetes/bots
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "main"
 
 imagePullSecrets:
-  - name: abhi-playground-cr
+  - name: bootstrap-doks-cr
 nameOverride: ""
 fullnameOverride: ""
 
@@ -82,3 +82,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+serviceMonitor:
+  enabled: false

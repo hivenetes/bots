@@ -1,10 +1,12 @@
+{{- if .Values.serviceMonitor.enabled -}}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "cats.fullname" . }}
+  name: {{ include "bots.fullname" . }}
 spec:
   selector:
     matchLabels:
-      app: {{ include "cats.fullname" . }}
+      app: {{ include "bots.fullname" . }}
   endpoints:
   - port: http
+{{- end }}

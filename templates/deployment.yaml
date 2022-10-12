@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "cats.fullname" . }}
+  name: {{ include "bots.fullname" . }}
   labels:
-    {{- include "cats.labels" . | nindent 4 }}
+    {{- include "bots.labels" . | nindent 4 }}
   annotations:
     {{- toYaml .Values.annotations | nindent 4 }}
 spec:
-  serviceName: "cats"
+  serviceName: "bots"
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "cats.selectorLabels" . | nindent 6 }}
+      {{- include "bots.selectorLabels" . | nindent 6 }}
 {{- if .Values.storage }}
   volumeClaimTemplates:
   - metadata:
@@ -32,13 +32,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "cats.selectorLabels" . | nindent 8 }}
+        {{- include "bots.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "cats.serviceAccountName" . }}
+      serviceAccountName: {{ include "bots.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -64,7 +64,7 @@ spec:
               protocol: TCP
 {{- if .Values.storage }}
           volumeMounts:
-          - mountPath: "/usr/share/cats"
+          - mountPath: "/usr/share/bots"
             name: cat-storage
 {{- end }}
           resources:
