@@ -11,7 +11,7 @@ An application that displays pictures of `bots` around the world.
 * [tilt.dev](https://docs.tilt.dev/install.html)
 * [doctl](https://docs.digitalocean.com/reference/doctl/)
 
-## Local Development
+## Local Development using Tilt
 - Open a terminal and start tilt: 
     ```bash
      tilt up
@@ -23,4 +23,6 @@ An application that displays pictures of `bots` around the world.
     tilt down
     ```
 
+## Overview of Development workflow
 
+![df](development-flow.png)
