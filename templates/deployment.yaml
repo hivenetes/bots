@@ -17,7 +17,7 @@ spec:
 {{- if .Values.storage }}
   volumeClaimTemplates:
   - metadata:
-      name: cat-storage
+      name: bot-storage
     spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: {{ .Values.storageclass }}
@@ -65,7 +65,7 @@ spec:
 {{- if .Values.storage }}
           volumeMounts:
           - mountPath: "/usr/share/bots"
-            name: cat-storage
+            name: bot-storage
 {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

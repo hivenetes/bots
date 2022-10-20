@@ -12,7 +12,11 @@ An application that displays pictures of `bots` around the world.
 * [doctl](https://docs.digitalocean.com/reference/doctl/)
 
 ## Local Development using Tilt
-- Open a terminal and start tilt: 
+- Copy the `tilt_config.json` from `tilt-resources/` to root dir
+    ```bash
+    cp tilt-resources/local/tilt_config_local.json tilt_config.json
+    ```
+- Start tilt: 
     ```bash
      tilt up
      # Open the UI on a browser at http://localhost:10350/

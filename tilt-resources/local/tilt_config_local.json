@@ -1,0 +1,14 @@
+{
+    "allowed_contexts": [
+        "docker-desktop"
+    ],
+    "default_registry": "",
+    "environment": "local",
+    "microservices": [
+        "bots"
+    ],
+    "namespace": "bots",
+    "port_forwards": [
+        "bots:8080"
+    ]
+}
