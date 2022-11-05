@@ -10,7 +10,7 @@ on:
       - "!.github/workflows/**"
     
 env:
-  REGISTRY: registry.digitalocean.com/bootstrap-doks-cr
+  REGISTRY: registry.digitalocean.com/hivenetes-cr
   IMAGE_NAME: ${{ github.repository }}
   
 jobs:

@@ -6,13 +6,13 @@ storageClass: "do-block-storage"
 replicaCount: 1
 failure: false
 image:
-  repository: registry.digitalocean.com/bootstrap-doks-cr/hivenetes/bots
+  repository: registry.digitalocean.com/hivenetes-cr/bots
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "main"
 
 imagePullSecrets:
-  - name: bootstrap-doks-cr
+  - name: hivenetes-cr
 nameOverride: ""
 fullnameOverride: ""
 
