@@ -64,7 +64,7 @@ for port_forward in cfg.get("port_forwards"):
             # Invalid port forward specified in tilt_config.json! #
             # Should be <resource>:<port_number>.                 #
             #                                                     #
-            # E.g.: bots:8080                                 #
+            # E.g.: bots:8080                                     #
             # =================================================== #
             """
         )
