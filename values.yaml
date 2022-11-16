@@ -9,7 +9,7 @@ image:
   repository: registry.digitalocean.com/hivenetes-cr/hivenetes/bots
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "main"
+  tag: "main-slim"
 
 imagePullSecrets:
   - name: hivenetes-cr
