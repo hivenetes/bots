@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	Version string = "dev"
+	Version string = "bootstrapper-demo"
 )
 
 func health(w http.ResponseWriter, r *http.Request) {
