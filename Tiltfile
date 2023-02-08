@@ -31,7 +31,6 @@ if not os.path.exists("./tilt_config.json"):
 
 config.define_string_list("allowed_contexts")
 config.define_string("default_registry")
-config.define_string("environment")
 config.define_string_list("microservices")
 config.define_string("namespace")
 config.define_string_list("port_forwards")
@@ -52,7 +51,7 @@ for microservice in cfg.get("microservices"):
 
 # Deploy each microservice image as stated in the tilt_config.json file
 for microservice in cfg.get("microservices"):
-    k8s_yaml(helm('.', microservice, values='tilt-resources/local/tilt-helm-local-values.yaml'))
+    k8s_yaml(helm('chart', microservice, values='tilt-resources/local/tilt-helm-local-values.yaml'))
 
 # Port forwards as stated in the tilt_config.json file
 for port_forward in cfg.get("port_forwards"):
@@ -70,4 +69,4 @@ for port_forward in cfg.get("port_forwards"):
         )
     service = mapping[0]
     port = mapping[1]
-    k8s_resource(service, port_forwards=port)
+    k8s_resource(service, objects=['bots:ServiceAccount'], port_forwards=port)

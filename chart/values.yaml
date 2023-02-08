@@ -12,7 +12,7 @@ image:
   tag: "main-slim"
 
 imagePullSecrets:
-  - name: hivenetes-cr
+  - name: ""
 nameOverride: ""
 fullnameOverride: ""
 

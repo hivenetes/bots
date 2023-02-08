@@ -1,9 +1,9 @@
 {
     "allowed_contexts": [
-        "docker-desktop"
+        "docker-desktop",
+        "minikube"
     ],
     "default_registry": "",
-    "environment": "local",
     "microservices": [
         "bots"
     ],
