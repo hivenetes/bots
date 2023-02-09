@@ -10,7 +10,7 @@ on:
       - "!.github/workflows/**"
     
 env:
-  REGISTRY: registry.digitalocean.com/hivenetes
+  REGISTRY: registry.digitalocean.com/diabhey
   IMAGE_NAME: ${{ github.repository }}
   
 jobs:
