@@ -1,9 +1,9 @@
 V := $(shell cat pkg/VERSION)
 all:
-	cd pkg && docker buildx build --build-arg=VERSION=$V --platform linux/amd64,linux/arm64,linux/arm . -t abigillu/bots:$V --push
+	cd pkg && docker buildx build . -t abigillu/bots --push
 deploy:
-	helm upgrade --install bots . --set=image.tag=$V
+	helm upgrade --install bots chart  --values chart/values.yaml
 deploy-fail:
-	helm upgrade --install bots . --set=image.tag=$V --set=failure=true
+	helm upgrade --install bots chart --set=failure=true --values chart/values.yaml
 undeploy:
 	helm uninstall bots

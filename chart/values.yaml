@@ -6,13 +6,13 @@ storageClass: "do-block-storage"
 replicaCount: 1
 failure: false
 image:
-  repository: registry.digitalocean.com/hivenetes-cr/hivenetes/bots
+  repository: registry.digitalocean.com/diabhey/hivenetes/bots
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "main-slim"
+  tag: "main"
 
 imagePullSecrets:
-  - name: ""
+  - name: "registry-diabhey"
 nameOverride: ""
 fullnameOverride: ""
 
@@ -71,7 +71,7 @@ resources:
     memory: 128Mi
 
 autoscaling:
-  enabled: true
+  enabled: false
   minReplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 20
@@ -84,4 +84,4 @@ tolerations: []
 affinity: {}
 
 serviceMonitor:
-  enabled: true
+  enabled: false
