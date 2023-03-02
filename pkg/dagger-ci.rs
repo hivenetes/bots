@@ -10,7 +10,8 @@ async fn main() -> eyre::Result<()> {
     let _reg = client
         .container()
         .build(context_dir.id().await?)
-        .publish(format!("docker.io/abigillu/bots-dagger"))
+        // .publish(format!("docker.io/abigillu/bots-dagger"))
+        .publish(format!("registry.digitalocean.com/diabhey/hivenetes/bots:dagger"))
         .await?;
 
     println!("Published image to: {:?}", _reg);

@@ -17,8 +17,13 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
+# rust
+pkg/target/
+
 # Go workspace file
 go.work
 
 # Misc
 tilt_config.json
+.DS_Store
+.vscode/
