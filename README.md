@@ -1,14 +1,18 @@
-# bots
+# Bots: more than an App
+
+This project will help you create a streamlined microservices development workflow for Kubernetes.
+
+We have leveraged popular tools such as [Tilt](https://tilt.dev/), [Docker Desktop](https://www.docker.com/products/docker-desktop/), and [dagger-rs](https://github.com/kjuulh/dagger-rs) to achieve this.
+
+> [Before you begin >>](./docs/blog.md)
 
 ![bots](/docs/assets/bots.gif)
 
-An application that displays pictures of `bots` around the world.
-
 ## Prerequisites
 
-* [docker-desktop](https://www.docker.com/products/docker-desktop/)
-* [tilt.dev](https://docs.tilt.dev/install.html)
-* [doctl](https://docs.digitalocean.com/reference/doctl/)
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+* [Tilt](https://docs.tilt.dev/install.html)
+* [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
 ## Local Development using Tilt
 
@@ -18,14 +22,14 @@ An application that displays pictures of `bots` around the world.
     cp tilt-resources/local/tilt_config_local.json tilt_config.json
     ```
 
-* Start tilt:
+* Start Tilt:
 
     ```bash
      tilt up
      # Open the UI on a browser at http://localhost:10350/
      ```
 
-* Once the development is done, stop tilt
+* Once the development is done, stop Tilt
 
     ```bash
     # Cleans up all the resources specified in the Tiltfile
