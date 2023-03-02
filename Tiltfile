@@ -46,7 +46,7 @@ if cfg.get("default_registry") != "":
 # Build each microservice image as stated in the tilt_config.json file
 for microservice in cfg.get("microservices"):
     docker_build(
-        microservice,'pkg'
+        microservice,'pkg/app'
     )
 
 # Deploy each microservice image as stated in the tilt_config.json file
