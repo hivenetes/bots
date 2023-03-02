@@ -1,0 +1,40 @@
+name: CI using Dagger Rust sdk
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "!**/README.md"
+      - "!.github/workflows/**"
+    
+env:
+  REGISTRY: registry.digitalocean.com/diabhey
+  IMAGE_NAME: ${{ github.repository }}
+  
+jobs:
+  publish-image-to-digitalocean:
+    runs-on: ubuntu-latest   
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v3
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          
+      - name: Log in to DigitalOcean Container Registry with short-lived credentials
+        run: doctl registry login --expiry-seconds 1200
+
+      - name: Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Rust build and run
+        uses: actions-rs/cargo@v1
+        with:
+          command: run
