@@ -9,7 +9,7 @@ image:
   repository: registry.digitalocean.com/diabhey/hivenetes/bots
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "main"
+  tag: "dagger"
 
 imagePullSecrets:
   - name: "registry-diabhey"
