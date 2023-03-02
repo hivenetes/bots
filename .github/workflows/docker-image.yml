@@ -8,10 +8,6 @@ on:
     paths:
       - "!**/README.md"
       - "!.github/workflows/**"
-
-defaults:
-  run:
-    working-directory: ./pkg      
     
 env:
   REGISTRY: registry.digitalocean.com/diabhey
@@ -20,6 +16,9 @@ env:
 jobs:
   container-release:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./pkg      
     permissions:
       contents: read
       packages: write
