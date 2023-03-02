@@ -8,6 +8,7 @@ on:
     paths:
       - "!**/README.md"
       - "!.github/workflows/**"
+      - "!docs/**"
     
 env:
   REGISTRY: registry.digitalocean.com/diabhey
