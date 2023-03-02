@@ -16,9 +16,9 @@ env:
 jobs:
   container-release:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./pkg      
+    # defaults:
+    #   run:
+    #     working-directory: "./pkg"     
     permissions:
       contents: read
       packages: write
@@ -37,7 +37,7 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - name: rust build    
+      - name: rust build
         uses: actions-rs/cargo@v1
         with:
           command: run

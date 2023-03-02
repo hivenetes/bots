@@ -19,7 +19,7 @@
 
 # rust
 pkg/target/
-
+/target
 # Go workspace file
 go.work
 

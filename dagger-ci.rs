@@ -5,7 +5,7 @@ async fn main() -> eyre::Result<()> {
     let client = dagger_sdk::connect().await?;
     let context_dir = client
         .host()
-        .directory("./app");
+        .directory("./pkg/app");
 
     let _reg = client
         .container()
